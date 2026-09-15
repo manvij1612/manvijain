@@ -52,20 +52,17 @@
       <p class="lead">
         Gravitational-wave searches are template-limited. Matched filtering compares the
         detector strain against a bank of modelled waveforms, and a signal whose physics is
-        missing from that bank is a signal the pipeline will not find. My research asks which
-        physics has to go into the templates &mdash; precession, tides, deviations from general
-        relativity &mdash; and what it costs to put it there.
+        missing from that bank is a signal the pipeline will have a hard time finding. My research asks which
+        physics has to go into the templates &mdash; precession, tides, and more and how to make it computationally efficient. I build template banks for precessing and tidally deformed binaries, develop waveform models for compact binaries in modified gravity, and run matched-filter searches on LIGO data with the SGNL/GstLAL pipelines.
       </p>
     </div>
 
     <!-- REPLACE: a wide image works well here. See README for suggested public-domain sources. -->
     <figure>
-      <img src="assets/img/gw-detector.jpg" alt="LIGO interferometer"
+      <img src="assets/img/research-figure.jpg" alt="LIGO interferometer"
            onerror="this.onerror=null;this.src='assets/img/figure-placeholder.svg';">
       <figcaption>
-        Advanced LIGO&rsquo;s interferometers measure strains of order 10<sup>&minus;21</sup> &mdash;
-        a fractional length change far smaller than a proton radius over the 4&nbsp;km arms.
-        Everything below is about deciding what to look for in that data.
+        A screenshot from a simulation of a black-hole binary merger with asymmetric masses and orbital precession. Credit: N. Fischer, H. Pfeiffer, A. Buonanno (Max Planck Institute for Gravitational Physics), Simulating eXtreme Spacetimes (SXS) Collaboration.
       </figcaption>
     </figure>
   </div>
@@ -77,16 +74,7 @@
       <p class="section-label">Doctoral research &middot; 2025&ndash;present</p>
       <h2>Tidal template banks for binary neutron star searches</h2>
       <p>
-        In a binary neutron star, each star raises a tide on the other. The resulting
-        deformation drains orbital energy and advances the inspiral phase by an amount set by
-        the tidal deformability &mdash; and therefore by the neutron-star equation of state.
-        Search template banks have historically treated neutron stars as point masses, which
-        leaves that phase difference unmodelled.
-      </p>
-      <p>
-        I construct matched-filter template banks that carry tidal effects explicitly, and run
-        injection campaigns to measure what they recover: how the fitting factor behaves across
-        the mass&ndash;deformability space, where a point-particle bank starts to lose signal,
+        Tidal effects in binary neutron stars are small but measurable, and they carry information about the neutron-star equation of state. Current searches for binary neutron stars use template banks that treat the stars as point particles, which is a good approximation for most of the parameter space. But for the heaviest, most deformable stars, the search loses sensitivity. I construct matched-filter template banks that carry tidal effects (and precession), and run injection campaigns to measure what they recover: how the fitting factor behaves across the mass&ndash;deformability space, where a point-particle bank starts to lose signal,
         and what bank size the added dimension actually costs. The goal is a tidally aware
         binary neutron star search.
       </p>
@@ -106,14 +94,11 @@
       <p>
         Dynamical Chern&ndash;Simons (dCS) gravity adds a parity-violating term to the
         Einstein&ndash;Hilbert action, coupling a scalar field to the Pontryagin density. For a
-        compact binary this modifies the conservative dynamics and the spin precession &mdash;
+        compact binary this modifies the conservative dynamics and the spin precession;
         precisely the parts of the waveform that a precessing-binary search is most sensitive to.
       </p>
       <p>
-        I derived the analytic equations of motion and waveform phasing for precessing compact
-        binaries in dCS gravity in Mathematica, and I am running a Fisher-matrix
-        parameter-estimation analysis to forecast how tightly current and next-generation
-        detectors could bound the dCS coupling length using precessing systems.
+        Currently, I am working toward deriving the analytic equations of motion and waveform phasing for precessing compact binaries in dCS gravity in Mathematica.
       </p>
       <div class="pill-row">
         <span class="pill pill--status">Manuscript in preparation, 2026</span>
@@ -129,29 +114,9 @@
       <p class="section-label">Graduate research &middot; 2024&ndash;2025 &middot; M.S. thesis</p>
       <h2>Searching for precessing binary black holes</h2>
       <p>
-        When a binary&rsquo;s spins are misaligned with its orbital angular momentum, the orbital
-        plane precesses and the observed waveform picks up amplitude and phase modulations.
-        Asymmetric-mass, heavily precessing systems are exactly the ones an aligned-spin template
-        bank handles worst.
-      </p>
-      <p>
         My M.S. thesis, <em>Harmonic Decomposition versus Metric-Based Template Banks in
-        Precessing Gravitational-Wave Searches</em>, compared two strategies for covering that
-        parameter space. Alongside it I:
+        Precessing Gravitational-Wave Searches</em>, compared two strategies for generating high-dimensional template banks with precession.
       </p>
-      <ul>
-        <li>ran precessing binary black hole searches on LIGO O1 and O2 data with the GstLAL pipeline;</li>
-        <li>packaged a precessing-harmonics waveform-generation code into a reusable module that the pipeline could call directly;</li>
-        <li>quantified how weak detector glitches, injected on top of simulated signals, bias the recovered parameters.</li>
-      </ul>
-      <p>
-        This work contributed to the LVK search published as Schmidt <em>et al.</em>,
-        <em>Phys. Rev. Lett.</em> <strong>133</strong>, 201401&nbsp;(2024).
-      </p>
-      <div class="pill-row">
-        <a class="pill" href="https://arxiv.org/abs/2406.17832" rel="noopener" target="_blank">arXiv:2406.17832</a>
-        <a class="pill" href="https://doi.org/10.1103/PhysRevLett.133.201401" rel="noopener" target="_blank">Phys. Rev. Lett. 133, 201401</a>
-      </div>
     </div>
 
     <!-- REPLACE: a plot of your own reads far better here than a stock image. -->
@@ -173,7 +138,7 @@
           <li>Matched filtering and template-bank construction</li>
           <li>Software injection campaigns and fitting-factor studies</li>
           <li>Bayesian and Fisher-matrix parameter estimation</li>
-          <li>Normalizing flows and scientific machine learning</li>
+          <li>High-performance computing and scientific machine learning</li>
         </ul>
       </div>
       <div>
@@ -181,7 +146,7 @@
         <ul>
           <li>GstLAL / SGNL, PyCBC, Bilby, LALSuite</li>
           <li>Python (NumPy, SciPy, Matplotlib, PyTorch, scikit-learn)</li>
-          <li>Mathematica, C, Julia, Bash</li>
+          <li>Mathematica, C, Julia, Jax, Bash</li>
           <li>Slurm and HTCondor on HPC clusters; Git, LaTeX, Linux</li>
         </ul>
       </div>
@@ -193,15 +158,10 @@
   <div class="shell">
     <p class="section-label">Code</p>
     <div class="card-grid">
-      <a class="card" href="https://github.com/manvij1612/nomemory-pe-results" rel="noopener" target="_blank">
-        <p class="card__tag">Results</p>
-        <h3>nomemory-pe-results</h3>
-        <p>Parameter-estimation result pages for a no-memory waveform study.</p>
-      </a>
       <a class="card" href="https://github.com/manvij1612/scientific-ml" rel="noopener" target="_blank">
         <p class="card__tag">Python</p>
         <h3>scientific-ml</h3>
-        <p>Scientific machine-learning coursework and experiments &mdash; surrogate models and neural approaches to physical systems.</p>
+        <p>Scientific machine-learning coursework and experiments.</p>
       </a>
       <a class="card" href="https://github.com/manvij1612/numerical-analysis" rel="noopener" target="_blank">
         <p class="card__tag">Julia</p>
